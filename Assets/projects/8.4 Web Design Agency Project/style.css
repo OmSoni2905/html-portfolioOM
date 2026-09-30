@@ -1,0 +1,99 @@
+body{
+  background-color: rgb(255, 236, 236);
+}
+.main{
+  font-family: sans-serif;
+  margin: 50px 50px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+  flex: 1;
+}
+div header .logo{
+  font-size: 80px;
+  font-family: "Geist Pixel", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0;
+  color: chocolate;
+}
+div header .mainheading{
+  font-size: 100px;
+  font-family: "Raleway", sans-serif;
+  margin-top: 20px;
+}
+.creative{
+  color: coral;
+}
+img{
+  height: 200px;
+  width: auto;
+  float: left;
+  margin-right: 50px;
+}
+div main .cardone{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+.cardone h2, p{
+  font-family: "Marcellus", serif;
+}
+div main .cardtwo{
+  float: right;
+  width: 40%;
+  text-align: left;
+}
+.cardtwo h2, p{
+  font-family: "Marcellus", serif;
+}
+footer{
+  clear: both;
+}
+footer .first{
+  text-align: center;
+  padding-top: 30px;
+  font-size: smaller;
+}
+footer .second{
+  text-align: end;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 80px;
+}
+
+@media (max-width: 600px){ 
+  .main{
+    margin: 20px 20px 20px 20px;
+  }
+  div header .mainheading{
+    font-size: 30px;
+    text-align: center;
+  }
+  div main .cardone{
+    width: 100%;
+    display: block;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  div main .cardtwo{
+    width: 100%;
+    display: block;
+    text-align: justify;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    float: none;
+    display: block; margin: 0 auto;
+  }
+  footer .second{
+    text-align: center;
+    font-size: medium;
+    padding-top: 20px;
+  }
+  footer .first{
+    font-size: x-small;
+  }
+}

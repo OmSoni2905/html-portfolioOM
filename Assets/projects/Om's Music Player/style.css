@@ -1,0 +1,933 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    color: white;
+}
+img{
+    display: block;
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+    cursor: pointer;
+}
+body{
+    background-color: rgb(0, 23, 1);
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    display: flex;
+}
+.guilt{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    display: none;
+}
+.guilt .words{
+    width: 80%;
+    height: max-content;
+    margin: auto;
+}
+.guilt .words div p{
+    font-size: 1rem;
+    line-height: 25px;
+    opacity: 80%;
+    text-align: center;
+}
+.mainflex{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 95vh;
+    width: 100%;
+    height: 100%;
+}
+.mainflex .navbarlogo{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    background-color: rgb(0, 23, 1);
+}
+.mainflex .navbarlogo .top-navbar{
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.mainflex .navbarlogo .top-navbar .applogo{
+    display: inline-flex;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    margin: 0 10px 0 30px;
+    position: fixed;
+    left: 0;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+.mainflex .navbarlogo .top-navbar .applogo .name h2{
+    font-family: "Geist Pixel", sans-serif;
+    font-style: italic;
+    font-size: 50px;
+    -webkit-text-stroke: 5px rgb(2, 184, 2);
+    paint-order: stroke fill;
+    letter-spacing: 5px;
+}
+.mainflex .navbarlogo .top-navbar .applogo .tagn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mainflex .navbarlogo .top-navbar .applogo .tagn h4{
+    font-family: "Geist Pixel", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    -webkit-text-stroke: 5px rgb(2, 184, 2);
+    paint-order: stroke fill;
+    letter-spacing: 5px;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .homebutton{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(7, 28, 6);
+    border-radius: 50%;
+    border: 2px solid rgb(12, 40, 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .homebutton:hover{
+    transform: scale(1.05);
+    background-color: rgb(3, 11, 3);
+    border: 2px solid rgb(23, 77, 17);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgb(0, 75, 0);
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .homebutton img{
+    width: 30px;
+    height: auto;
+    opacity: 60%;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar{
+    width: 600px;
+    height: 50px;
+    display: inline-flex;
+    background-color: rgb(7, 28, 6);
+    border-radius: 50px;
+    border: 2px solid rgb(12, 40, 9);
+    align-items: center;
+    transition: 0.1s ease;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar:hover{
+    background-color: rgb(12, 49, 10);
+    cursor: text;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchlogo{
+    padding: 10px 10px 10px 15px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transition: 0.1s ease;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchlogo:hover{
+    cursor: pointer;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchlogo img{
+    width: 30px;
+    height: 30px;
+    opacity: 60%;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchsomething p{
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    opacity: 50%;
+}
+.mainflex .library{
+    width: 100px;
+    height: 77%;
+    background-color: rgb(7, 28, 6);
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    margin-top: 82px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.mainflex .library .trio{
+    width: fit-content;
+    padding: 10px 0 10px 0;
+    border-radius: 20px;
+    background-color: rgb(14, 54, 12);
+    position: sticky;
+    top: 0;
+}
+.mainflex .library .trio .des{
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: rgb(12, 40, 9);
+    border-radius: 20px;
+    margin: 10%;
+    transition: 0.3s ease;
+}
+.mainflex .library .trio .des:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(50, 108, 67, 0.551);
+    cursor: pointer;
+}
+.mainflex .library .trio .des img{
+    width: 70%;
+    aspect-ratio: 1;
+    transform: translate(-50%,-50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    opacity: 60%;
+}
+.mainflex .library .trio .full{
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: rgb(12, 40, 9);
+    border-radius: 20px;
+    margin: 10%;
+    transition: 0.3s ease;
+}
+.mainflex .library .trio .full:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(132, 240, 165);
+    cursor: pointer;
+}
+.mainflex .library .trio .full img{
+    width: 100%;
+    border-radius: 20px;
+}
+.mainflex .library .libsec{
+    overflow-y: scroll;
+    height: 47%;
+    scrollbar-width: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.mainflex .library .libsec::-webkit-scrollbar{
+    display: none;
+}
+.mainflex .library .libsec .follow{
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: rgb(12, 40, 9);
+    border-radius: 20px;
+    margin: 10px;
+    transition: 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainflex .library .libsec .follow:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(132, 240, 165);
+    background-color: rgb(37, 92, 31);
+    cursor: pointer;
+}
+.mainflex .library .libsec .follow img{
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.mainflex .library .libsec .wrap{
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: rgb(12, 40, 9);
+    border-radius: 20px;
+    margin: 10px;
+    transition: 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainflex .library .libsec .wrap:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(132, 240, 165);
+    background-color: rgb(37, 92, 31);
+    cursor: pointer;
+}
+.mainflex .library .libsec .wrap img{
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 20px;
+}
+.mainflex .homescreen{
+    margin: 80px 10px 80px 120px;
+    overflow-y: scroll;
+    height: calc(100vh - 165px);
+    scrollbar-width: none;
+}
+.mainflex .homescreen::-webkit-scrollbar{
+    display: none;
+}
+.select{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+.select .sec{
+    width: fit-content;
+    height: fit-content;
+    padding: 2px;
+    border-radius: 20px;
+    background-color: rgb(13, 33, 0);
+    border: 3px solid rgb(35, 83, 0);
+    transition: 0.1s ease;
+}
+.select .sec:hover{
+    background-color: rgb(19, 47, 0);
+    border: 3px solid rgb(41, 98, 0);
+    cursor: pointer;
+}
+.select .sec .all{
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
+    font-size: 18px;
+    opacity: 70%;
+}
+.playlist{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+.rp{
+    width: fit-content;
+    align-items: center;
+}
+.rp h1{
+    font-weight: 600;
+    font-size: 35px;
+    color: rgb(140, 210, 110);
+}
+.mainflex .homescreen .playlist .mt{
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+.mainflex .homescreen .playlist .mt::-webkit-scrollbar{
+    display: none;
+}
+.mainflex .homescreen .playlist .mt .musictile{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    flex-shrink: 0;
+    height: max-content;
+    margin: 20px 6.75px 20px 10px;
+    border-radius: 20px;
+    transition: 0.1s ease;
+}
+.mainflex .homescreen .playlist .mt .musictile:hover{
+    background-color: rgb(9, 39, 8);
+    box-shadow: 0 0 10px rgba(50, 108, 67, 0.551);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.musictile .img{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0 0;
+}
+.musictile .artist{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0 0 0;
+}
+.musictile .artist img{
+    width: 155px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid rgba(35, 52, 37, 0.432);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.musictile .sname{
+    width: 140px;
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 7.5px 0 3px 20px;
+}
+.musictile .singer{
+    width: 140px;
+    color: white;
+    font-size: 14px;
+    opacity: 70%;
+    margin: 0 0 10px 20px;
+}
+.musictile .img img{
+    width: 155px;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    border: 4px solid rgba(35, 52, 37, 0.432);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.homescreen footer{
+    margin: 30px;
+    position: relative;
+}
+.homescreen footer .first{
+    text-align: center;
+    opacity: 50%;
+    font-size: 16px;
+    margin: 5px;
+}
+.homescreen footer .second{
+    text-align: center;
+    opacity: 25%;
+    font-size: 14px;
+    margin: 5px;
+}
+.playerbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(7, 30, 0);
+    z-index: 10;
+    border: 3px solid rgba(1, 90, 1, 0.576);
+}
+.playerbar .music{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+}
+.playerbar .music .img{
+    height: 100%;
+    aspect-ratio: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.playerbar .music .img img{
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    transition: 0.1s ease;
+}
+.playerbar .music .img img:hover{
+    cursor: pointer;
+}
+.playerbar .music .namesname{
+    display: inline-flex;
+    flex-direction: column;
+    width: max-content;
+    height: 80px;
+    color: white;
+    justify-content: center;
+    clear: both;
+}
+.playerbar .music .namesname .hfive{
+    width: fit-content;
+    margin: 10px 10px 0 10px;
+}
+.playerbar .music .namesname .hfive h5{
+    font-size: 20px;
+    color: white;
+    transition: 0.1s ease;
+}
+.playerbar .music .namesname .hfive h5:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.playerbar .music .namesname .ppp{
+    width: fit-content;
+    margin: 0 10px 10px 10px;
+}
+.playerbar .music .namesname .ppp p{
+    font-size: 15px;
+    opacity: 70%;
+    color: white;
+}
+.playerbar .music .namesname .ppp p span{
+    font-size: 15px;
+    opacity: 70%;
+    color: white;
+}
+.playerbar .music .namesname .ppp p span:hover{
+    text-decoration: underline;
+    opacity: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+.playerbar .music .vicon{
+    width: fit-content;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    float: right;
+}
+.playerbar .music .vicon img{
+    width: 17.5px;
+    aspect-ratio: 1;
+}
+.playerbar .play{
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    width: max-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+.playerbar .play .keys{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+}
+.playerbar .play .keys .aa{
+    height: fit-content;
+    width: fit-content;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 70%;
+    transition: 0.1s ease;
+    margin: 5px;
+}
+.playerbar .play .keys .aa:hover{
+    transform: scale(1.1);
+    background-color: rgb(0, 55, 0);
+    opacity: 100%;
+}
+.playerbar .play .keys .aa img{
+    width: 30px;
+    aspect-ratio: 1;
+    margin: 5px;
+}
+.playerbar .play .timer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    gap: 10px;
+}
+.playerbar .play .timer .currtime{
+    flex: 1;
+}
+.playerbar .play .timer .tottime{
+    flex: 1;
+}
+.playerbar .play .timer .currtime p{
+    text-align: left;
+    margin-left: 3px;
+    color: white;
+    font-size: 12px;
+    opacity: 70%;
+}
+.playerbar .play .timer .tottime p{
+    text-align: right;
+    margin-right: 4px;
+    color: white;
+    font-size: 12px;
+    opacity: 70%;
+}
+.playerbar .play .timer .timebar{
+    height: 20%;
+    width: 100%;
+    font-size: 50px;
+    color: white;
+    justify-content: center;
+    margin-top: 5px;
+}
+.playerbar .play .timer .timebar hr{
+    height: 3px;
+    width: 250px;
+    border-radius: 3px;
+    background-color: white;
+    opacity: 70%;
+}
+.playerbar .play .timer .shhh .huh{
+    transition: 0.1s ease;
+}
+.playerbar .play .timer .shhh .huh:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+.playerbar .elementbar{
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+}
+.playerbar .elementbar div{
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    align-items: center;
+}
+.playerbar .elementbar div img{
+    height: 20px;
+    aspect-ratio: 1;
+    opacity: 70%;
+    margin: 5px;
+    transition: 0.1s ease;
+}
+.playerbar .elementbar div img:hover{
+    opacity: 100%;
+    transform: scale(1.1);
+}
+.playerbar .elementbar div hr{
+    width: 80px;
+    height: 3px;
+    color: white;
+    background-color: white;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+@media (min-width:  1050px) and (max-width:1200px){
+    .mainflex .navbarlogo .top-navbar .homeplussearch .searchbar{
+        width: 500px;
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .name h2{
+        font-size: 40px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .tagn h4{
+        font-size: 16px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+}
+@media (min-width:  900px) and (max-width:1050px){
+    .mainflex .navbarlogo .top-navbar .homeplussearch .searchbar{
+        width: 400px;
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .name h2{
+        font-size: 35px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .tagn h4{
+        font-size: 14px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+}
+@media (min-width:780px) and (max-width:900px){
+    .mainflex .navbarlogo .top-navbar .homeplussearch .searchbar{
+        width: 300px;
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .name h2{
+        font-size: 30px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+    .mainflex .navbarlogo .top-navbar .applogo .tagn h4{
+        font-size: 12px;
+        -webkit-text-stroke: 3px rgb(2, 184, 2);
+    }
+    .mainflex .library{
+        width: 80px;
+        height: 82%;
+    }
+    .mainflex .library .trio{
+        padding: 8px 0 8px 0;
+    }
+    .mainflex .library .libsec{
+        height: 57.5%;
+    }
+    .mainflex .homescreen{
+        margin: 80px 10px 0 90px;
+        height: calc(100vh - 140px);
+    }
+    .select{
+        gap: 8px;
+        margin: 8px;
+    }
+    .select .sec .all{
+        font-size: 14px;
+    }
+    .rp h1{
+        font-size: 27.5px;
+    }
+    .mainflex .homescreen .playlist .mt{
+        gap: 5px;
+    }
+    .mainflex .homescreen .playlist .mt .musictile{
+        width: 135px;
+        margin: 5px 2.5px 5px 2.5px;
+    }
+    .musictile .img{
+        display: flex;
+        width: 100%;
+        margin: 5px 0 0 0;
+    }
+    .musictile .artist{
+        margin: 5px 0 0 0;
+    }
+    .musictile .artist img{
+        width: 115px;
+        margin: 7.5px 10px 7.5px 10px;
+    }
+    .musictile .sname{
+        width: 100px;
+        font-size: 14px;
+        margin: 4px 0 2px 15px;
+    }
+    .musictile .singer{
+        width: 100px;
+        font-size: 12px;
+        margin: 0 0 10px 15px;
+    }
+    .musictile .img img{
+        width: 115px;
+        margin: 7.5px 10px 7.5px 10px;
+    }
+    .homescreen footer{
+        margin: 15px;
+    }
+    .homescreen footer .first{
+        font-size: 14px;
+    }
+    .homescreen footer .second{
+        font-size: 13px;
+        opacity: 35%;
+    }
+    .playerbar{
+        height: 60px;
+        border: 1.5px solid rgba(1, 90, 1, 0.576);
+    }
+    .playerbar .music .namesname{
+        height: 100%;
+    }
+    .playerbar .music .namesname .hfive{
+        margin: 5px 5px 0 5px;
+    }
+    .playerbar .music .namesname .hfive h5{
+        font-size: 16px;
+    }
+    .playerbar .music .namesname .ppp{
+        width: fit-content;
+        margin: 0 5px 5px 5px;
+    }
+    .playerbar .music .namesname .ppp p{
+        font-size: 13px;
+    }
+    .playerbar .music .namesname .ppp p span{
+        font-size: 13px;
+    }
+    .playerbar .music .vicon img{
+        width: 13.5px;
+        margin: 3px;
+    }
+    .playerbar .play .keys{
+        gap: 0;
+    }
+    .playerbar .play .keys .aa img{
+        width: 17.5px;
+    }
+    .playerbar .play .timer .timebar hr{
+        width: 180px;
+    }
+    .playerbar .elementbar{
+        right: 5px;
+    }
+    .playerbar .elementbar .volumebar{
+        display: none;
+    }
+}
+@media (min-width:600px) and (max-width:780px){
+.mainflex .navbarlogo{
+    height: 80px;
+}
+.mainflex .navbarlogo .top-navbar{
+    justify-content: normal;
+}
+.mainflex .navbarlogo .top-navbar .applogo{
+    margin: 0 0 0 0;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.mainflex .navbarlogo .top-navbar .applogo .name h2{
+    font-size: 40px;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch{
+    justify-content: normal;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .homebutton{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    position: relative;
+    left: 0;
+    margin: 20px;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    justify-content: center;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchlogo{
+    padding: 12px 12px 12px 12px;
+    border-radius: 50%;
+}
+.mainflex .navbarlogo .top-navbar .homeplussearch .searchbar .searchsomething p{
+    display: none;
+}
+.mainflex .library{
+    width: 65px;
+    height: 84%;
+    }
+    .mainflex .library .trio{
+        padding: 6px 0 6px 0;
+    }
+    .mainflex .library .libsec{
+        height: 64%;
+    }
+    .mainflex .library .libsec .follow{
+        margin: 7.5px;
+    }
+    .mainflex .library .libsec .wrap{
+        margin: 7.5px;
+    }
+    .mainflex .homescreen{
+        margin: 80px 10px 0 75px;
+        height: calc(100vh - 140px);
+    }
+    .select .sec .all{
+        font-size: 12px;
+    }
+    .rp h1{
+        font-size: 25px;
+    }
+    .mainflex .homescreen .playlist .mt .musictile{
+        width: 115px;
+        margin: 10px 5px 5px 10px;
+    }
+    .musictile .img{
+        display: flex;
+        width: 100%;
+        margin: 0 0 0 0;
+    }
+    .musictile .artist{
+        margin: 0 0 0 0;
+    }
+    .musictile .artist img{
+        width: 95px;
+        margin: 7.5px 10px 7.5px 10px;
+    }
+    .musictile .sname{
+        width: 95px;
+        font-size: 13px;
+        margin: 0 0 2px 10px;
+    }
+    .musictile .singer{
+        width: 95px;
+        font-size: 11px;
+        margin: 0 0 7.5px 10px;
+    }
+    .musictile .img img{
+        width: 95px;
+        margin: 7.5px 10px 7.5px 10px;
+    }
+    .homescreen footer{
+        margin: 15px;
+    }
+    .homescreen footer .first{
+        font-size: 13px;
+    }
+    .homescreen footer .second{
+        font-size: 12px;
+        opacity: 35%;
+    }
+    .playerbar{
+        height: 60px;
+        border: 1.5px solid rgba(1, 90, 1, 0.576);
+    }
+    .playerbar .music .namesname{
+        height: 100%;
+    }
+    .playerbar .music .namesname .hfive{
+        margin: 0 0 0 2.5px;
+    }
+    .playerbar .music .namesname .hfive h5{
+        font-size: 15px;
+    }
+    .playerbar .music .namesname .ppp{
+        display: none;
+    }
+    .playerbar .music .vicon img{
+        width: 13.5px;
+        margin: 3px;
+    }
+    .playerbar .play .keys{
+        gap: 0;
+    }
+    .playerbar .play .keys .aa{
+        margin: 5px;
+    }
+    .playerbar .play .keys .aa img{
+        width: 20px;
+    }
+    .playerbar .play .timer .timebar hr{
+        width: 160px;
+    }
+    .playerbar .elementbar{
+        right: 5px;
+    }
+    .playerbar .elementbar .lyrics{
+        display: none;
+    }
+    .playerbar .elementbar .volume{
+        display: none;
+    }
+    .playerbar .elementbar .volumebar{
+        display: none;
+    }
+    .playerbar .elementbar .minip{
+        display: none;
+    }
+    .playerbar .elementbar .fullscreen{
+        display: none;
+    }
+}
+@media (max-width:600px){
+    .mainflex{
+        display: none;
+    }
+    .guilt{
+        display: contents;
+    }
+}
